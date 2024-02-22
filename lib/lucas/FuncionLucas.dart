@@ -77,22 +77,22 @@ class _LucasNumbersAppState extends State<LucasNumbersApp> {
   }
 
   void generarNumeros() {
-    int initialValue = int.tryParse(_valorInicialController.text) ?? 2;
-    int count = int.tryParse(_cantidadController.text) ?? 0;
-    List<int> result = [];
+    int valorInicial = int.tryParse(_valorInicialController.text) ?? 2;
+    int total = int.tryParse(_cantidadController.text) ?? 0;
+    List<int> resultado = [];
 
-    int a = initialValue;
+    int a = valorInicial;
     int b = 1;
 
-    for (int i = 0; i < count; i++) {
-      result.add(a);
-      int nextTerm = a + b;
+    for (int i = 0; i < total; i++) {
+      resultado.add(a);
+      int valorSiguiente = a + b;
       a = b;
-      b = nextTerm;
+      b = valorSiguiente;
     }
 
     setState(() {
-      lucasNumbers = result;
+      lucasNumbers = resultado;
     });
   }
 }
